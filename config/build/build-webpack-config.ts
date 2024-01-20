@@ -1,11 +1,11 @@
-import path from 'path';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildPlugins } from './build-plugins';
 import { buildLoaders } from './build-loaders';
 import { buildResolvers } from './build-resolvers';
+import { buildDevServer } from './build-dev-server';
 
-export function builWebpackConfig(options: BuildOptions): webpack.Configuration {
+export function builWebpackConfig(options: BuildOptions): webpack.Configuration & Pick<webpack.WebpackOptionsNormalized, 'devServer'> {
     const {paths, mode} = options;
 
     return {
@@ -20,6 +20,7 @@ export function builWebpackConfig(options: BuildOptions): webpack.Configuration 
         module: {
             rules: buildLoaders()
         },
-        resolve: buildResolvers()
+        resolve: buildResolvers(),
+        devServer: buildDevServer(options)
     }
 }
