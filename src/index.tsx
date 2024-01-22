@@ -1,7 +1,10 @@
 import {render} from 'react-dom';
-import cls from './index.module.scss';
+import {BrowserRouter} from 'react-router-dom';
+import { App } from './app';
 
 render(
-    <div className={cls.app}>App</div>,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
     document.getElementById('root')
 )
