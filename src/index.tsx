@@ -1,7 +1,7 @@
 import {render} from 'react-dom';
-import './index.scss';
+import cls from './index.module.scss';
 
 render(
-    <div className='app'>App</div>,
+    <div className={cls.app}>App</div>,
     document.getElementById('root')
 )
