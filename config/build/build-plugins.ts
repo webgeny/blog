@@ -14,7 +14,8 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({
             __IS_DEV: JSON.stringify(isDev)
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ];
 
     if(isProd) {
