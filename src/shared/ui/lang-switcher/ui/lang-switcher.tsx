@@ -7,12 +7,12 @@ interface LangSwithcerProps {
     className?: string;
 }
 
-export const LangSwitcher = ({className}: LangSwithcerProps) => {
-    const {t, i18n} = useTranslation();
+export const LangSwitcher = ({ className }: LangSwithcerProps) => {
+    const { t, i18n } = useTranslation();
 
     const toggle = async () => {
-        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-    }
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
     return (
         <Button
@@ -22,5 +22,5 @@ export const LangSwitcher = ({className}: LangSwithcerProps) => {
         >
             {t('Язык')}
         </Button>
-    )
-}
+    );
+};

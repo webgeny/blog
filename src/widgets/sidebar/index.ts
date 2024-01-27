@@ -1,5 +1,3 @@
-
-
 export {
-    Sidebar
+    Sidebar,
 } from './ui/sidebar';

@@ -9,8 +9,8 @@ interface ThemeSwitcherProps {
 }
 
 // Есть предлложение добавить это в фичу
-export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
-    const {theme, toggleTheme} = useTheme();
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <Button
@@ -20,5 +20,5 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
         >
             {theme === Theme.dark ? <DarkIcon /> : <LightIcon />}
         </Button>
-    )
-}
+    );
+};
