@@ -12,6 +12,9 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
             template: paths.html
         }),
         new webpack.ProgressPlugin(),
+        new webpack.DefinePlugin({
+            __IS_DEV: JSON.stringify(isDev)
+        })
     ];
 
     if(isProd) {

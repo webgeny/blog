@@ -8,6 +8,7 @@ interface ThemeSwitcherProps {
     className?: string;
 }
 
+// Есть предлложение добавить это в фичу
 export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
     const {theme, toggleTheme} = useTheme();
 
