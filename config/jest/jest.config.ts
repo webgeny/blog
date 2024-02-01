@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-import-module-exports
+import path from 'path';
+
 /**
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
@@ -82,7 +85,7 @@ const config = {
     moduleDirectories: [
         'node_modules',
     ],
-
+    modulePaths: ['<rootDir>src'],
     // An array of file extensions your modules use
     moduleFileExtensions: [
         'js',
@@ -95,7 +98,10 @@ const config = {
 
     // A map from regular expressions to module names or to
     // arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jest-empty-component.tsx'),
+    },
 
     // An array of regexp pattern strings, matched against
     // all module paths before considered 'visible' to the module loader
@@ -145,7 +151,7 @@ const config = {
 
     // A list of paths to modules that run some code to configure or
     // set up the testing framework before each test
-    // setupFilesAfterEnv: [],
+    setupFilesAfterEnv: ['<rootDir>config/jest/setup-tests.ts'],
 
     // The number of seconds after which a test is considered as
     // slow and reported as such in the results.

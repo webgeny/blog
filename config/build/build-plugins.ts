@@ -1,12 +1,13 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     const isProd = !isDev;
 
-    const plugins = [
+    const plugins: any = [
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
@@ -15,6 +16,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
             __IS_DEV: JSON.stringify(isDev),
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({ openAnalyzer: false }),
     ];
 
     if (isProd) {
@@ -26,6 +28,5 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
 
         );
     }
-
     return plugins;
 }
