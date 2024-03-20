@@ -1,4 +1,4 @@
-export enum  AppRoutes {
+export enum AppRoutes {
     MAIN = 'main',
     SETTINGS = 'settings',
     ABOUT = 'about',

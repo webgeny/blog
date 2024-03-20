@@ -11,12 +11,9 @@
   grid-area: sidebar;
   padding: 32px;
   max-width: 284px;
-
-  border: 0.1px solid red;
 }
 
 .content {
-  border: 0.1px solid;
   grid-area: content;
   max-width: 1200px;
   justify-self: center;
@@ -25,7 +22,6 @@
 }
 
 .rightbar {
-  border: 0.1px yellow;
   grid-area: rightbar;
   display: flex;
   flex-direction: column;

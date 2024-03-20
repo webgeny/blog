@@ -65,9 +65,9 @@ export function useArticleFilters() {
 
     const onChangeType = useCallback(
         (value: ArticleType) => {
-        dispatch(articlesPageActions.setType(value));
-        dispatch(articlesPageActions.setPage(1));
-        fetchData();
+            dispatch(articlesPageActions.setType(value));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
         },
         [dispatch, fetchData],
     );

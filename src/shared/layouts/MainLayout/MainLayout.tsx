@@ -12,6 +12,7 @@ interface MainLayoutProps {
 
 export const MainLayout = memo((props: MainLayoutProps) => {
     const { className, content, toolbar, header, sidebar } = props;
+
     return (
         <div className={classNames(cls.MainLayout, {}, [className])}>
             <div className={cls.content}>{content}</div>

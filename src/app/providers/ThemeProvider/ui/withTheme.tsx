@@ -12,4 +12,3 @@ export const withTheme = (Component: React.ComponentType) => {
         );
     };
 };
- 
